@@ -1,14 +1,14 @@
-# Dependa-PouBOT
+# Dependify
 
 ## Inspiration
 
 Research shows that **42% of developers** spend most of their time dealing with **technical debt**. On average, developers dedicate **17.3 hours per week** to maintenance tasks such as debugging and refactoring. This ongoing struggle with complex, over-engineered, or low-quality code can be mentally exhausting, contributing to **developer burnout**.
 
-Inspired by this challenge, and the power of **Large Language Models (LLMs) to automate workflows**, we built **DependaPou**, a developer tool designed to **offload much of the maintenance process to Generative AI**.
+Inspired by this challenge, and the power of **Large Language Models (LLMs) to automate workflows**, we built **Dependify**, a developer tool designed to **offload much of the maintenance process to Generative AI**.
 
 ## What It Does
 
-When you upload your GitHub repository to our dashboard, **DependaPou**:
+When you upload your GitHub repository to our dashboard, **Dependify**:
 
 1. **Scans your codebase** for outdated dependencies and vulnerabilities using the **Groq Inference API** running in a **Modal container**.
 2. **Generates a list of files** that require refactoring.
@@ -42,9 +42,9 @@ When you upload your GitHub repository to our dashboard, **DependaPou**:
 - Efficient parallel file processing with Modal.
 - Best practices for automating GitHub workflows.
 
-## What's Next for DependaPou
+## What's Next for Dependify
 
 - Automated unit test generation for refactored code.
 - Direct deployments from our platform.
 
-We’re excited about the future of DependaPou and how it can revolutionize developer productivity 🚀.
+We’re excited about the future of Dependify and how it can revolutionize developer productivity 🚀.
