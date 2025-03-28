@@ -2,7 +2,7 @@
 
 ## Inspiration
 
-Research shows that **42% of developers** spend most of their time dealing with **technical debt**. On average, developers dedicate **17.3 hours per week** to maintenance tasks such as debugging and refactoring. This ongoing struggle with complex, over-engineered, or low-quality code can be mentally exhausting, contributing to **developer burnout**.
+Research shows that **41% of developers** spend most of their time dealing with **technical debt**. On average, developers dedicate **16.4 hours per week** to maintenance tasks such as debugging and refactoring. This ongoing struggle with complex, over-engineered, or low-quality code can be mentally exhausting, contributing to **developer burnout**.
 
 Inspired by this challenge, and the power of **Large Language Models (LLMs) to automate workflows**, we built **Dependify**, a developer tool designed to **offload much of the maintenance process to Generative AI**.
 
