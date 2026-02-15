@@ -1,0 +1,2 @@
+run = "bash replit_start.sh"
+entrypoint = "replit_start.sh"
