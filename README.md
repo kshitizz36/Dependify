@@ -33,6 +33,14 @@
 2.  **Configure Secrets**: Open the "Secrets" tool in Replit and add your `.env` variables (e.g., `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_KEY`).
 3.  **Run**: Click the "Run" button. The configured `.replit` and `replit_start.sh` scripts will handle dependency installation and server startup.
 
+> [!IMPORTANT]
+> **Required Secrets**:
+> You MUST add the following secrets in Replit for the app to work:
+> - `SUPABASE_URL`: Your Supabase Project URL
+> - `SUPABASE_KEY`: Your Supabase Anon Key
+> - `NEXT_PUBLIC_SUPABASE_URL`: Same as `SUPABASE_URL` (required for Frontend)
+> - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Same as `SUPABASE_KEY` (required for Frontend)
+
 **Troubleshooting Replit Builds:**
 If you encounter build errors or stale dependencies, open the **Shell** and run:
 ```bash
