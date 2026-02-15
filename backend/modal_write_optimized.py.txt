@@ -1,0 +1,30 @@
+# ============================================================
+# OPTIMIZED VERSION - Use AFTER running ADD_COLUMNS_TO_SUPABASE.sql
+# ============================================================
+# In modal_write.py, replace the entire try-except block (lines ~92-110) with:
+
+        # Update Supabase with progress
+        filename = file_path.split("/")[-1]
+        data = {
+            "status": "WRITING",
+            "message": f"✍️ Updating {filename}",
+            "code": job_report.refactored_code,
+            "filename": filename,  # Column now exists in Supabase!
+            "old_code": code_content  # Store original code for old vs new comparison
+        }
+
+        supabase_client.table("repo-updates").insert(data).execute()
+
+        return {
+            "file_path": file_path,
+            **job_report.model_dump()
+        }
+
+# ============================================================
+# Benefits after this change:
+# - Cleaner code (no try-except needed)
+# - Better performance (direct insert)
+# - old_code stored for accurate comparisons
+# - Easier file matching on frontend
+# - Structured data for analytics
+# ============================================================

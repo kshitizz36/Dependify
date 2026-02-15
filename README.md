@@ -262,20 +262,45 @@ Dependify/
 
 ---
 
-## 🗺️ Roadmap
+## 🧗 Challenges We Faced
 
-- [ ] AI-powered unit test generation for refactored code
-- [ ] VS Code extension for in-editor usage
-- [ ] Support for Python, Go, Rust, and Java (currently JS/TS focused)
-- [ ] CI/CD pipeline integration (GitHub Actions, GitLab CI)
-- [ ] Custom coding style enforcement
-- [ ] Self-hosted / on-premise option for enterprises
+- **Debugging Modal containers** — running AI agents inside serverless containers meant we couldn't just `print()` and see output. We had to figure out logging, secrets management, and handling cold starts across 100 parallel containers
+- **Self-healing verification loop** — getting the Verifier agent to actually fix broken refactors was tricky. We designed a multi-model pipeline where Haiku checks, Sonnet diagnoses, and Haiku fixes — getting them to communicate properly took multiple iterations
+- **Real-time Supabase sync** — making the dashboard update live as files are processed across dozens of containers simultaneously. Handling race conditions and ordering of status updates (Reading → Writing → Verifying → Verified) was a real challenge
+- **Git automation at scale** — programmatically forking repos, creating branches, staging hundreds of files, and opening PRs through the GitHub API without hitting rate limits or auth issues
+- **LLM output parsing** — AI models don't always return clean JSON. We built robust parsing with fallbacks for markdown-wrapped responses, partial outputs, and malformed JSON
 
 ---
 
-## 📄 License
+## 🏆 Accomplishments We're Proud Of
 
-This project is for educational and demonstration purposes.
+- Built a **3-agent AI pipeline** (Reader → Writer → Verifier) that works end-to-end autonomously
+- **100 parallel Modal containers** processing files simultaneously — entire repos modernized in minutes
+- **Self-healing code** — the Verifier agent doesn't just flag problems, it actually fixes them with a retry loop using two different AI models
+- Fully automated **GitHub PR creation** — from fork to branch to commit to pull request, zero manual steps
+- **Live dashboard** with typewriter code animation — you can literally watch AI rewrite your code character by character in real-time
+- Scalable architecture that works the same for a 10-file repo or a 10,000-file repo
+
+---
+
+## 📚 What We Learned
+
+- How to orchestrate **multi-agent AI systems** where different models collaborate (Sonnet for deep thinking, Haiku for speed)
+- Efficient **parallel processing** with Modal's serverless containers and managing state across them
+- Building **real-time data pipelines** with Supabase subscriptions for instant UI updates
+- Best practices for **automating GitHub workflows** — forking, branching, and PR creation via API
+- How to make AI output **production-reliable** — structured parsing, validation, and self-correction loops
+
+---
+
+## � What's Next for Dependify
+
+- **AI-powered unit test generation** — automatically generate tests for refactored code before opening the PR
+- **Multi-language support** — expand beyond JavaScript/TypeScript to Python, Go, Rust, and Java
+- **VS Code extension** — trigger Dependify directly from your editor
+- **CI/CD integration** — run Dependify as a GitHub Action on every push
+- **Custom style enforcement** — let teams define their own coding standards and have AI follow them
+- **Security vulnerability patching** — not just modernize syntax, but automatically fix known CVEs in dependencies
 
 ---
 

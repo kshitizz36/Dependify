@@ -1,0 +1,26 @@
+# ============================================================
+# OPTIMIZED VERSION - Use AFTER running ADD_COLUMNS_TO_SUPABASE.sql
+# ============================================================
+# In checker.py, replace the entire try-except block (lines ~72-91) with:
+
+        print(chat_completion)
+
+        filename = file_path.split("/")[-1]
+        data = {
+            "status": "READING",
+            "message": f"📖 Reading {filename}",
+            "code": chat_completion.code_content,
+            "filename": filename  # Column now exists in Supabase!
+        }
+
+        supabase_client.table("repo-updates").insert(data).execute()
+        
+        return chat_completion
+
+# ============================================================
+# Benefits after this change:
+# - Cleaner code (no try-except needed)
+# - Better performance (direct insert)
+# - Easier file matching on frontend
+# - Structured data for analytics
+# ============================================================
