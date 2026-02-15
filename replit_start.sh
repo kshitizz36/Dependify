@@ -10,24 +10,25 @@ echo "2) Frontend (Next.js)"
 echo ""
 read -p "Enter 1 or 2: " choice
 
-if [ "$choice" == "1" ]; then
+if [ "$1" == "1" ]; then
     echo "🚀 Starting Backend..."
-    cd backend
     
     if [ ! -d "venv" ]; then
         echo "📦 Creating virtual environment..."
-        python -m venv venv
+        python3 -m venv venv
     fi
     
     source venv/bin/activate
+    
     echo "📦 Installing dependencies..."
-    pip install -r requirements.txt
+    echo "This may take a few minutes..."
+    python3 -m pip install -r backend/requirements.txt
     
     # Replit often needs 0.0.0.0
     echo "🔥 Running Server..."
-    python server.py
+    exec python3 -m uvicorn backend.main:app --host 0.0.0.0 --port 8000
     
-elif [ "$choice" == "2" ]; then
+elif [ "$1" == "2" ]; then
     echo "🚀 Starting Frontend..."
     cd frontend
     
