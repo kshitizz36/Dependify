@@ -48,6 +48,20 @@ git pull origin main
 ```
 Then click **Run** again.
 
+### Replit Deployment Configuration (Autoscale/Reserved VM)
+
+If you are using the **Deploy** tab in Replit, use these exact settings:
+
+**Build Command:**
+```bash
+npm install -g pnpm && cd frontend && pnpm install && pnpm build && cd .. && python3 -m venv venv && source venv/bin/activate && pip install -r backend/requirements.txt
+```
+
+**Run Command:**
+```bash
+bash start.sh
+```
+
 ## 💡 The Solution
 
 Dependify automates the entire code modernization workflow using a **3-agent AI pipeline** that reads, writes, and verifies code changes — then opens a GitHub PR for your review.
