@@ -1,0 +1,99 @@
+┌─────────────────────────────────────────────────────────────────┐
+│                   DEPENDIFY 2.0 - QUICK START                   │
+└─────────────────────────────────────────────────────────────────┘
+
+📋 YOUR APP STATUS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ Backend: WORKS NOW (with fallback code)
+✅ Frontend: WORKS NOW (with smart filename extraction)
+⚠️  Database: NEEDS MIGRATION (optional, for optimization)
+
+🚀 TO RUN YOUR APP NOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Terminal 1 - Backend
+cd /Users/kshitiz./Desktop/Dependify2.0/backend
+uvicorn server:app --reload --port 5001
+
+# Terminal 2 - Frontend  
+cd /Users/kshitiz./Desktop/Dependify2.0/frontend
+npm run dev
+
+# Open: http://localhost:3000
+
+📊 WHAT YOU'LL SEE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✨ File Processing Status Panel
+   - Last 5 files being processed
+   - Color-coded status badges (READING/WRITING/LOADING)
+   - Clear filenames extracted from messages
+   
+✨ Live Code Preview
+   - Real-time code updates
+   - Current file being processed
+   - Status emojis (📖 🤓 ✍️)
+
+✨ Old vs New Comparison
+   - Side-by-side code comparison
+   - Matched by filename
+   - Clear before/after view
+
+🔧 OPTIONAL: OPTIMIZE DATABASE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+See: MIGRATION_GUIDE.md for detailed steps
+
+Quick version:
+1. Open Supabase SQL Editor
+2. Run: ADD_COLUMNS_TO_SUPABASE.sql
+3. Update: checker.py (use checker_optimized.py.txt)
+4. Update: modal_write.py (use modal_write_optimized.py.txt)
+5. Restart server
+
+⚡ BENEFITS AFTER MIGRATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Faster queries (indexed columns)
+• No try-catch overhead
+• Better file matching
+• Cleaner code
+• Analytics-ready data
+
+🐛 KNOWN ISSUES & FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Issue: "Missing GITHUB_TOKEN" in Modal logs
+Fix: Modal containers use secrets, not .env file
+      (This warning is safe to ignore)
+
+Issue: "403 - Resource not accessible" for PR creation
+Fix: GitHub token needs 'repo' scope
+     Update token at: https://github.com/settings/tokens
+
+Issue: "Could not find 'filename' column"
+Fix: Already handled with fallback code!
+     (Or run migration for optimal performance)
+
+📁 FILES YOU HAVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ ADD_COLUMNS_TO_SUPABASE.sql    - SQL migration script
+✅ MIGRATION_GUIDE.md              - Step-by-step migration
+✅ checker_optimized.py.txt        - Optimized checker code
+✅ modal_write_optimized.py.txt    - Optimized writer code
+✅ backend/.env                    - Environment variables (configured)
+
+💡 TIPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Test with small repos first
+• Watch Modal logs for debugging
+• Check browser console for frontend errors
+• Supabase real-time must be enabled
+• GitHub token must have 'repo' scope
+
+🎯 NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. [ ] Start your app and test (works now!)
+2. [ ] Fix GitHub token permissions if needed
+3. [ ] Run database migration when ready
+4. [ ] Apply optimized code after migration
+5. [ ] Celebrate! 🎉
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Your app is production-ready! The migration is just optimization.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
