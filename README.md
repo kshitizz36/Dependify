@@ -25,6 +25,21 @@
 - Developers dedicate **16.4 hours/week** to maintenance tasks — debugging, refactoring, updating dependencies
 - Manual code modernization is tedious, error-prone, and blocks feature development
 
+## Deployment
+
+### Deploy on Replit
+
+1.  **Import**: Create a new Repl by importing this repository (`https://github.com/kshitizz36/Dependify`).
+2.  **Configure Secrets**: Open the "Secrets" tool in Replit and add your `.env` variables (e.g., `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_KEY`).
+3.  **Run**: Click the "Run" button. The configured `.replit` and `replit_start.sh` scripts will handle dependency installation and server startup.
+
+**Troubleshooting Replit Builds:**
+If you encounter build errors or stale dependencies, open the **Shell** and run:
+```bash
+git pull origin main
+```
+Then click **Run** again.
+
 ## 💡 The Solution
 
 Dependify automates the entire code modernization workflow using a **3-agent AI pipeline** that reads, writes, and verifies code changes — then opens a GitHub PR for your review.
